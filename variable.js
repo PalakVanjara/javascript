@@ -73,11 +73,11 @@ console.log("outside let"+f);
 
 // Temporal Dead Zone (TDZ)
 console.log(h);
-var h = 24;
+var h = 24; //undefined 
 
 // console.log(g);
-console.log(j);
-let j = 12;
+//console.log(j);
+//let j = 12; //error
 
 // Hoisting Imapact
 // Hoisting --> when your create a variable into is that break
@@ -87,3 +87,36 @@ var temp_d = 12;
 // var temp_d; --> undefined; --> that go to up
 // temp_d = 12; --> that go to down (means stuck into line 66)
 // if you use console.log before initialization that give you undefined;
+
+//exercise
+//1
+// console.log(nm)
+// let nm="palak";
+
+//2
+// console.log(num);
+// var num="hello";
+
+//3
+// var x=1;
+// {
+//     var x=2;
+//     console.log(x);
+// }
+
+//4
+// let a1=10;
+// {
+//     let a1=20;
+//     console.log("inside",a1);
+// }
+// console.log("outside",a1);
+
+//5
+const person = 
+{
+    name: "demo"
+};
+person.name = "user";
+// person = {}; // This will cause an error because const variables cannot be reassigned
+console.log(person.name);
