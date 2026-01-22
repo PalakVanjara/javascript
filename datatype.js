@@ -88,3 +88,4 @@ u_name = {}; // objec
 // ex. if(null){}, js convert it into false-!!null
 // ex. if(-1){}, js convert it into true-!!-1
 // all --> true(except above values)
+
