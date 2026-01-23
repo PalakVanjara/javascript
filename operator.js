@@ -99,3 +99,4 @@
 // typeof NaN --> number
 // typeof --> premitive data type mate use karvo
 // instanceof --> reference data type mate use karvo
+
