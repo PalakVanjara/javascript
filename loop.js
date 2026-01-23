@@ -9,16 +9,16 @@
 //for (ex. 1 -> 50 -> increment by 1)
 //(start; end; change)
 
-for (let i = 1; i <= 10; i++) {
-    console.log(i);
-}
-for (let j = 9; j >= 1; j--) {
-    console.log(j);
-}
+// for (let i = 1; i <= 10; i++) {
+//     console.log(i);
+// }
+// for (let j = 9; j >= 1; j--) {
+//     console.log(j);
+// }
 
-for (let k = 1; k <= 5; k++) {
-    console.log("Hello World");
-}
+// for (let k = 1; k <= 5; k++) {
+//     console.log("Hello World");
+// }
 
 //while loop -- do while loop
 //kya thi javanu chhe --> kya rokavanu chhe --> kevi rite javanu chhe
@@ -29,8 +29,43 @@ for (let k = 1; k <= 5; k++) {
 // change
 // }
 
-let p = 5;
-while (p <= 10) {
-    console.log("L with while loop :" , p);
-    p++;
+// let p = 5;
+// while (p <= 10) {
+//     console.log("P with while loop :" , p);
+//     p++;
+// }
+// let b = 30;
+// while (b >= 20){
+//     console.log(b);
+//     b--;
+// }
+
+// let c = 30;
+// while (c >= 20){
+//     console.log(c);
+//     c--;
+// }
+
+// let d=25;
+// while(d>20){
+//     console.log(d);
+//     d++;
+// }
+
+
+// let d = 0;
+// while (d < 5) {
+//     console.log("Hello");
+//     d++;
+// }
+let f = 50;
+while (f <= 60) {
+console.log(f);
+f--;
 }
+
+// let q =50;
+// while (q <= 60) {
+// console.log(q);
+// --9;
+// }
