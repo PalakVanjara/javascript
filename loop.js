@@ -94,17 +94,17 @@
 // }
 // while(end);
 
-let j = 12; // start
-do {
-    console.log("do while loop:", j); // code
-    j++; // change (condition)
-} while (j < 20); // while check after executing code block (end)
+// let j = 12; // start
+// do {
+//     console.log("do while loop:", j); // code
+//     j++; // change (condition)
+// } while (j < 20); // while check after executing code block (end)
 
-let p=40;
-do{
-    console.log("do while loop 2");
-    p--;
-}while(p>=20)
+// let p=40;
+// do{
+//     console.log("do while loop 2");
+//     p--;
+// }while(p>=20)
 
 // break
 // for (let k = 1; k <= 201; k++) {
@@ -113,3 +113,28 @@ do{
 //         break;
 //     }
 // }
+// continue
+// for (let a = 1; a <= 10; a++) {
+//   if (a === 5) {
+//     continue;
+//   }
+//   console.log(a);
+// }
+//exercise:
+//ex 1
+// console.log("Print number from 1 to 10 using a for loop.");
+// for (let i = 1; i <= 10; i++) {
+//     console.log(i);
+// }
+//ex 2
+// console.log("Print number from 10 to 1 using while loop.");
+// let d=10;
+// while(d>=1){
+//     console.log(d);
+//     d--;
+// }
+//ex3
+console.log("Print even numbers from 1 to 20 using for loop.");
+for(let x=2; x<=20; x+=2){
+    console.log(x);
+}
