@@ -341,7 +341,7 @@ let d=10;
 <p>Print odd numbers from 1 to 15 using while loop.</p>
 <p>let i= 1;</p>
 <p>while(i<=15){
-    if(i%2 !==0){ // or (i%2 ===1)
+    if(i%2 !==0){  or (i%2 ===1)
     console.log(i);
     }
     i++;
@@ -364,9 +364,9 @@ for(let i=1; i<=10; i++){
 <p>
 let sum = 0;
 for(let i=1; i<=100; i++){
-    // let sum =0;
+     let sum =0;
     sum = sum + i;
-    // console.log(sum);
+     console.log(sum);
 }
 console.log(sum);
 </p>
@@ -574,7 +574,7 @@ Function expressions are not hoisted as functions. Only the variable declaration
 <p>function checkAge(age){
     if(age < 18){
         console.log("Too Young");
-        return; // exits the function
+        return;  exits the function
     }
     console.log("Access Granted");
 }
@@ -668,7 +668,7 @@ total += num;
 <h1> Example 21: </h1>
 <p>What is the use of IIFE? Name one real-world use case.</p>
 <p>let fun=(function(){
-    let score = 0; // this is private variable
+    let score = 0;  this is private variable
     return{
         getScore: function(){
             console.log(score);
@@ -700,4 +700,182 @@ total += num;
 }</p>
 <p>Ans and Why</p>
 </div>
- 
+
+ <!-- day7 -->
+ Q1. push()
+You are building a to-do app. Add a new task 'Buy milk' to the tasks array.
+let tasks = ['Wake up', 'Brush teeth'];
+tasks.push("Buy milk");
+ans:['Wake up', 'Brush teeth', 'Buy milk']
+why:push() add value to end of array
+
+
+Q2. pop()
+Remove the last notification from the notifications array.
+let notifications = ['Email', 'Message', 'Reminder'];
+notifications.pop();
+ans: ['Email', 'Message']
+why:it remove last value from array
+
+
+Q3. shift()
+A queue system removes the first customer. Remove the first customer.
+let customers = ['Customer1', 'Customer2', 'Customer3'];
+customers.shift();
+ans:['Customer2', 'Customer3']
+why:it remove 1st value
+
+ Q4. unshift()
+A new song is added to the beginning of the playlist.
+let playlist = ['Song B', 'Song C'];
+playlist.unshift("song D");
+ans:['song D', 'Song B', 'Song C']
+why:it add value to the end of array
+
+
+ Q5. splice()
+In a classroom list, remove 'Alex' and add 'John' and 'Sara' in the same position.
+let students = ['Mike', 'Alex', 'Emma', 'Sophia'];
+students.splice(1,1,"John","sara");
+ans: ['Mike', 'John', 'sara', 'Emma', 'Sophia']
+why:it remove john and add 2 value place on it
+
+
+ Q6. splice()
+From the menu, remove 2 items starting from index 1.
+let menu = ['Burger', 'Pizza', 'Pasta', 'Salad'];
+menu.splice(1,2);
+ans:['Burger', 'Salad']
+why:it remove 1 and 2 no index value.
+
+
+ Q7. slice()
+Create a new array that contains only weekend days.
+let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+let weekends=days.slice(5,8);
+ans: ['Saturday', 'Sunday']
+why:it add weekends in new variable 
+
+ Q8. reverse()
+Reverse the order of levels in a game.
+let levels = ['Easy', 'Medium', 'Hard'];
+levels.reverse();
+ans:['Hard', 'Medium', 'Easy']
+why:it reverse the order
+
+ Q9. sort()
+Sort the scores in ascending order.
+let scores = [45, 12, 78, 34, 89];
+scores.sort();
+ans:[12, 34, 45, 78, 89]
+why:it sort in the acsending order
+
+
+ Q10. sort() with numbers
+ Sort the prices from lowest to highest.
+let prices = [199, 49, 999, 299, 149];
+prices.sort((a, b) => a - b);
+ans:[49, 149, 199, 299, 999]
+why:it just sort in ascending order with function.
+
+ Q11. slice() vs splice()
+ From the array, create a new array of the first 3 items WITHOUT changing the original array.
+let products = ['Laptop', 'Phone', 'Tablet', 'Monitor', 'Keyboard'];
+let firstThree = products.slice(0, 3);
+ans:['Laptop', 'Phone', 'Tablet']
+why:it stores 3 value in different array
+
+
+ Q12. splice() complex
+ In the array below:
+ 1. Remove 'Blue'
+ 2. Add 'Purple' and 'Orange' at the same position
+let colors = ['Red', 'Green', 'Blue', 'Yellow'];
+colors.splice(2, 1, 'Purple', 'Orange')
+ans:['Red', 'Green', 'Purple', 'Orange', 'Yellow']
+why:it use the splice()
+
+ Q13. reverse() + push()
+ Reverse the array and then add 'Final Step' at the end.
+let steps = ['Step 1', 'Step 2', 'Step 3'];
+steps.reverse().push("final Step");
+ans:['Step 3', 'Step 2', 'Step 1', 'final Step']
+why:use reverse and push with together
+
+ Q14. sort() strings
+ Sort names alphabetically, ignoring case sensitivity.
+let names = ['alice', 'Bob', 'charlie', 'David'];
+names.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+ans:['alice', 'Bob', 'charlie', 'David']
+why:toLowerCase() removes case differences.localeCompare() handles alphabetical order properly.Original casing is preserved
+
+
+ Q15. Combination Question
+ You are managing a movie watchlist:
+ 1. Add 'Inception'
+ 2. Remove the first movie
+ 3. Sort the list alphabetically
+let movies = ['Avatar', 'Titanic', 'Gladiator'];
+movies.push('Inception');
+movies.shift();
+movies.sort();
+ans:['Gladiator', 'Inception', 'Titanic']
+why:it perform 3 function combine
+
+ Q16. splice() return value
+ What does the splice method return in this case?
+let nums1 = [1, 2, 3, 4];
+nums1.splice(1, 2);
+ans:[1, 4]
+why:it remove value on 1st index and  total 2 value remove  
+
+
+ Q17. slice() immutability check
+ After executing slice, does the original array change?
+let nums2 = [10, 20, 30, 40];
+let result = nums2.slice(1, 3);
+ans:[20, 30]
+why:It is immutable.slice(start, end) returns a new array.it not change original array
+
+ Q19. reverse() mutation
+ After reversing, what happens to the original array reference?
+let letters = ['a', 'b', 'c'];
+let reversedLetters = letters.reverse();
+ans:['c', 'b', 'a']
+why:it change original array.It does not create a new array.reversedLetters === letters
+
+ Q21. splice() edge case
+ What happens if deleteCount is 0?
+let arr = ['x', 'y', 'z'];
+arr.splice(1, 0, 'new');
+ans:['x', 'new', 'y', 'z']
+why:'new' gets inserted between 'x' and 'y'.1 → start index.0 → delete nothing.'new' → element to insert
+
+ Q23. slice() negative index
+ What elements are returned?
+let values = [100, 200, 300, 400, 500];
+let sliced = values.slice(-3, -1);
+ans:[300, 400]
+why:slice(start, end) → end is exclusive.Negative values count from the right.Original array stays unchanged
+
+
+ Q24. splice() vs slice() decision
+ Which method would you use if you want to:
+ a) Update the original array
+ b) Keep the original array unchanged
+ let values1 = [100, 200, 300, 400, 500];
+ values1.splice(1, 1, 'newValue');
+
+let values2 = [100, 200, 300, 400, 500];
+let copy=values2.slice(0,2);
+ans:[100, 'newValue', 300, 400, 500],[100, 200]
+why:a-it use the splice method and b-use the slice method
+
+
+ Q25. Chained methods (brain teaser)
+ What is the final value of arr?
+let arr2 = [1, 2, 3];
+arr2.push(arr2.shift());
+ans:[2, 3, 1]
+why:shift-it remove'1' starting value .
+push- it add the '1' value to the end.
