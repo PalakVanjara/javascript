@@ -879,3 +879,491 @@ arr2.push(arr2.shift());
 ans:[2, 3, 1]
 why:shift-it remove'1' starting value .
 push- it add the '1' value to the end.
+
+<!-- day 8 -->
+1. Double daily steps count
+Real life: Fitness app doubling step goal
+
+const step = [1000, 2000, 3000];
+function doubleSteps(step) {
+  return step * 2;
+}
+
+const newSteps = step.map(doubleSteps);
+ans:[1000, 2000, 3000]
+
+2. Convert minutes to seconds
+Real life: Video duration calculation
+
+const minutes = [1, 5, 10];
+const seconds = minutes.map(function(min) {
+  return min * 60;
+});
+ans:[60, 300, 600]
+
+
+3. Add ₹50 delivery charge to prices
+Real life: Food delivery app
+
+cost prices = [200, 350, 500];
+const finalPrices = prices.map(price => price + 50);
+ans:[250, 400, 550]
+
+
+4. Convert exam marks to grades
+Real life: Result system
+
+const marks = [35, 72, 88, 40];
+function getGrade(mark) {
+  return mark >= 40 ? 'Pass' : 'Fail';
+}
+
+const grades = marks.map(getGrade);
+ans:['Fail', 'Pass', 'Pass', 'Pass']
+
+
+5. Capitalize names
+Real life: Display usernames properly
+
+const names = ['rahul', 'neha', 'amit'];
+const formattedNames = names.map(name =>
+  name[0].toUpperCase() + name.slice(1)
+);
+ans:['Rahul', 'Neha', 'Amit']
+
+
+6. Apply 10% discount
+Real life: Shopping sale
+
+const prices = [500, 1000, 1500];
+function applyDiscount(price) {
+  return price - price * 0.10;
+}
+const discounted = prices.map(applyDiscount);
+ans:[450, 900, 1350]
+
+
+7. Add bonus points to scores based on condition
+Real life: Game scoring system
+
+const scores = [45, 60, 85];
+const finalScores = scores.map(score => {
+  if (score >= 80) return score + 20;
+  if (score >= 50) return score + 10;
+  return score;
+});
+ans:[45, 70, 105]
+
+
+8. Convert temperatures with formula
+Real life: Weather app
+
+const celsius = [0, 20, 30];
+function toFahrenheit(temp) {
+  return (temp * 9/5) + 32;
+}
+const fahrenheit = celsius.map(toFahrenheit);
+ans:[32, 68, 86]
+
+
+9. Generate table of numbers
+Real life: Math learning app
+
+const numbers = [1, 2, 3, 4];
+const tableOfTwo = numbers.map(num => num * 2);
+ans:[2, 4, 6, 8]
+
+
+10. Combine map with string formatting
+Real life: SMS notification system
+
+const balances = [500, 1200, 300];
+const messages = balances.map(balance =>
+  `Your balance is ₹${balance}`
+); 
+ans: ['Your balance is ₹500', 'Your balance is ₹1200', 'Your balance is ₹300']
+
+<!-- ---------------------------------------------------------------------------------- -->
+### 1. Get even numbers
+**Real life:** Find even roll numbers
+
+const numbers = [1, 2, 3, 4, 5, 6];
+const evenNumbers = numbers.filter(num => num % 2 === 0);
+ans:[2, 4, 6]
+
+### 2. Filter adults
+**Real life:** Allow only 3+ users
+
+const ages = [2, 1, 10, 16, 5];
+function isAdult(age) {
+  return age >= 18;
+}
+const adults = ages.filter(isAdult);
+ans:[19]
+
+### 3. Remove empty items
+**Real life:** Clean user input
+
+const inputs = ['Hello', '', 'World', '', 'JS'];
+const validInputs = inputs.filter(text => text !== '');
+ans:['Hello', 'World', 'JS']
+
+### 4. Filter passing marks
+**Real life:** Exam result system
+
+const marks = [35, 72, 88, 40, 25];
+const passedStudents = marks.filter(mark => mark >= 40);
+ans:[72, 88, 40]
+
+### 5. Get affordable prices
+**Real life:** Shopping app price filter
+
+const prices = [199, 499, 999, 1499, 299];
+const affordable = prices.filter(price => price <= 500);
+ans:[199, 499, 299]
+
+### 6. Filter long words
+**Real life:** Search keyword validation
+
+const words = ['hi', 'hello', 'javascript', 'ok'];
+function isLongWord(word) {
+  return word.length > 3;
+}
+const longWords = words.filter(isLongWord);
+ans: ['hello', 'javascript']
+
+### 7. Filter positive numbers
+**Real life:** Bank transaction validation
+
+const transactions = [200, -100, 500, -50, 300];
+const credits = transactions.filter(amount => amount > 0);
+ans: [200, 500, 300]
+
+### 8. Filter numbers within a range
+**Real life:** Score selection
+
+const scores = [45, 60, 85, 30, 90];
+const selectedScores = scores.filter(score => score >= 50 && score <= 90);
+ans:[60, 85, 90]
+
+<!-- reduce  -->
+### 1. Total money in wallet
+**Real life:** Add all cash amounts
+
+const money = [100, 200, 50];
+const totalMoney = money.reduce((sum, amount) => sum + amount, 0);
+ans:350
+
+### 2. Total steps walked in a week
+**Real life:** Fitness tracker
+
+const steps = [3000, 5000, 4000, 6000];
+function addSteps(total, step) {
+  return total + step;
+}
+const weeklySteps = steps.reduce(addSteps, 0);
+ans:18000
+
+
+### 3. Find total cart price
+**Real life:** Shopping bill
+
+const prices = [499, 299, 199];
+const totalPrice = prices.reduce((total, price) => total + price, 0);
+ans:997
+
+
+### 4. Find maximum score
+**Real life:** Highest exam mark
+
+const marks = [45, 88, 67, 92];
+const highest = marks.reduce((max, mark) => {
+  return mark > max ? mark : max;
+}, marks[0]);
+ans:92
+
+
+### 5. Count total characters
+**Real life:** Text length calculation
+
+const words = ['Hi', 'Hello', 'JS'];
+const totalChars = words.reduce((count, word) => count + word.length, 0);
+ans:9
+
+
+### 6. Combine words into a sentence
+**Real life:** Message builder
+
+const words = ['Learning', 'JavaScript', 'is', 'fun'];
+const sentence = words.reduce((text, word) => text + ' ' + word);
+ans:'Learning JavaScript is fun'
+
+
+### 7. Count passed students
+**Real life:** Result summary
+
+const marks = [35, 72, 88, 40, 25];
+const passCount = marks.reduce((count, mark) => {
+  return mark >= 40 ? count + 1 : count;
+}, 0);
+ans:3
+
+
+### 8. Calculate final balance
+**Real life:** Bank account calculation
+
+const transactions = [1000, -200, -300, 500];
+const finalBalance = transactions.reduce((balance, amount) => balance + amount, 0);
+ans:1000
+
+
+### 9. Build comma-separated string
+**Real life:** Display values in UI
+
+const items = ['Pen', 'Book', 'Pencil'];
+const result = items.reduce((text, item) => text + ', ' + item);
+ans:'Pen, Book, Pencil'
+
+<!-- map,filter,reduce -->
+<div>
+  <h1>Example 1: Shopping App – Discounted Total</h1>
+  <p>const prices = [200, 800, 1200, 450, 700];</p>
+  <p>const total = prices.filter(price => price > 500).map(price => price * 0.9).reduce((sum, price) => sum + price, 0);</p>
+  <p>Answer or Error: 2430</p>
+  <p>Why: Pehle 500 se upar prices filter hue, phir 10% discount laga aur end me total nikala.</p>
+</div>
+
+<div>
+  <h1>Example 2: Fitness App – Total Active Minutes</h1>
+  <p>const minutes = [20, 45, 60, 15, 90];</p>
+  <p>const totalCalories = minutes.filter(min => min > 30).map(min => min * 5).reduce((total, cal) => total + cal, 0);</p>
+  <p>Answer or Error: 975</p>
+  <p>Why: 30 se zyada minutes wale days select hue, calories me convert hue aur total add hua.</p>
+</div>
+
+<div>
+  <h1>Example 3: Exam System – Average of Passed Marks</h1>
+  <p>const marks = [35, 72, 88, 40, 25, 90];</p>
+  <p>const passed = marks.filter(mark => mark >= 40);</p>
+  <p>const average = passed.reduce((sum, mark) => sum + mark, 0) / passed.length;</p>
+  <p>Answer or Error: 72.5</p>
+  <p>Why: Sirf passing marks liye gaye aur unka average nikala.</p>
+</div>
+
+<div>
+  <h1>Example 4: Salary System – Monthly Payout</h1>
+  <p>const wages = [300, 800, 450, 1000, 600];</p>
+  <p>const totalPayout = wages.filter(wage => wage > 500).map(wage => wage + 100).reduce((total, wage) => total + wage, 0);</p>
+  <p>Answer or Error: 2700</p>
+  <p>Why: 500 se zyada wages par bonus add karke total payout nikala.</p>
+</div>
+
+<div>
+  <h1>Example 5: Online Course – Completion Points</h1>
+  <p>const progress = [20, 50, 75, 40, 100];</p>
+  <p>const totalPoints = progress.filter(p => p >= 50).map(p => p * 2).reduce((sum, p) => sum + p, 0);</p>
+  <p>Answer or Error: 450</p>
+  <p>Why: Completed lessons ko points me convert karke total nikala.</p>
+</div>
+
+<div>
+  <h1>Example 6: Bank Transactions – Final Balance</h1>
+  <p>const transactions = [1000, -500, 2000, -300, 1500];</p>
+  <p>const creditedAmount = transactions.filter(amount => amount > 0).map(amount => amount * 1.02).reduce((total, amount) => total + amount, 0);</p>
+  <p>Answer or Error: 4590</p>
+  <p>Why: Sirf credit transactions par interest add karke total calculate hua.</p>
+</div>
+
+<div>
+  <h1>Example 7: Game App – Final Score</h1>
+  <p>const scores = [30, 60, 90, 45, 80];</p>
+  <p>const finalScore = scores.filter(score => score > 50).map(score => score + 10).reduce((sum, score) => sum + score, 0);</p>
+  <p>Answer or Error: 270</p>
+  <p>Why: 50 se upar scores par bonus add karke sum nikala.</p>
+</div>
+
+<div>
+  <h1>Example 8: E-commerce – Total Taxed Amount</h1>
+  <p>const prices = [500, 1200, 3000, 800, 1500];</p>
+  <p>const finalAmount = prices.filter(price => price > 1000).map(price => price * 1.18).reduce((sum, price) => sum + price, 0);</p>
+  <p>Answer or Error: 6724</p>
+  <p>Why: 1000 se upar items par tax add karke final amount nikala.</p>
+</div>
+
+<div>
+  <h1>Example 9: Attendance System – Reward Points</h1>
+  <p>const hours = [6, 8, 9, 7, 10];</p>
+  <p>const totalPoints = hours.filter(hour => hour >= 8).map(hour => hour * 10).reduce((sum, point) => sum + point, 0);</p>
+  <p>Answer or Error: 270</p>
+  <p>Why: 8 ya usse zyada hours par points calculate hue aur total hua.</p>
+</div>
+
+<div>
+  <h1>Example 10: Interview Brain Teaser</h1>
+  <p>const numbers = [1, 2, 3, 4, 5, 6];</p>
+  <p>const sumOfSquares = numbers.filter(num => num % 2 === 0).map(num => num * num).reduce((sum, num) => sum + num, 0);</p>
+  <p>Answer or Error: 56</p>
+  <p>Why: Even numbers ke squares ka sum nikala gaya.</p>
+</div>
+
+<div>
+  <h1>Example 1: Grocery Store – Total Cost</h1>
+  <p>const prices = [50, 120, 300, 80, 200];</p>
+  <p>const totalCost = prices.filter(p => p > 100).map(p => p * 1.05).reduce((s, p) => s + p, 0);</p>
+  <p>Answer or Error: 651</p>
+  <p>Why: 100 se zyada items par 5% tax lagakar total nikala.</p>
+</div>
+
+<div>
+  <h1>Example 2: Fitness App – Weekly Calories</h1>
+  <p>const minutes = [10, 25, 40, 15, 60];</p>
+  <p>const totalCalories = minutes.filter(m => m >= 20).map(m => m * 4).reduce((s, c) => s + c, 0);</p>
+  <p>Answer or Error: 500</p>
+  <p>Why: 20+ minutes wale days ko calories me convert kiya.</p>
+</div>
+
+<div>
+  <h1>Example 3: Exam Results – Total Passed Marks</h1>
+  <p>const marks = [35, 55, 80, 20, 45];</p>
+  <p>const totalMarks = marks.filter(m => m >= 40).reduce((s, m) => s + m, 0);</p>
+  <p>Answer or Error: 180</p>
+  <p>Why: Sirf passing marks ka sum liya gaya.</p>
+</div>
+
+<div>
+  <h1>Example 4: Bank App – Total Credits</h1>
+  <p>const transactions = [500, -200, 1000, -300, 700];</p>
+  <p>const totalCredit = transactions.filter(t => t > 0).reduce((s, t) => s + t, 0);</p>
+  <p>Answer or Error: 2200</p>
+  <p>Why: Sirf positive transactions add hue.</p>
+</div>
+
+<div>
+  <h1>Example 5: Online Sale – Discounted Bill</h1>
+  <p>const prices = [800, 1500, 3000, 600, 1200];</p>
+  <p>const totalBill = prices.filter(p => p > 1000).map(p => p * 0.85).reduce((s, p) => s + p, 0);</p>
+  <p>Answer or Error: 4760</p>
+  <p>Why: 1000 se upar items par 15% discount laga.</p>
+</div>
+
+<div>
+  <h1>Example 6: Attendance – Reward Points</h1>
+  <p>const hours = [5, 7, 8, 6, 9];</p>
+  <p>const totalPoints = hours.filter(h => h >= 7).map(h => h * 10).reduce((s, p) => s + p, 0);</p>
+  <p>Answer or Error: 240</p>
+  <p>Why: 7+ hours ko points me convert kiya.</p>
+</div>
+
+<div>
+  <h1>Example 7: Delivery App – Total Distance</h1>
+  <p>const distances = [3, 6, 10, 4, 8];</p>
+  <p>const totalDistance = distances.filter(d => d > 5).map(d => d + 1).reduce((s, d) => s + d, 0);</p>
+  <p>Answer or Error: 27</p>
+  <p>Why: 5 km se zyada trips me bonus add hua.</p>
+</div>
+
+<div>
+  <h1>Example 8: Salary System – Final Salary</h1>
+  <p>const salaries = [18000, 25000, 30000, 15000];</p>
+  <p>const totalSalary = salaries.filter(s => s > 20000).map(s => s + 2000).reduce((t, s) => t + s, 0);</p>
+  <p>Answer or Error: 59000</p>
+  <p>Why: Eligible salaries me bonus add karke total.</p>
+</div>
+
+<div>
+  <h1>Example 9: Study App – Total Study Time</h1>
+  <p>const hours = [0.5, 1.5, 2, 0.75, 3];</p>
+  <p>const totalMinutes = hours.filter(h => h > 1).map(h => h * 60).reduce((s, m) => s + m, 0);</p>
+  <p>Answer or Error: 390</p>
+  <p>Why: 1 ghante se zyada sessions ko minutes me badla.</p>
+</div>
+
+<div>
+  <h1>Example 10: Electricity Usage – Monthly Bill</h1>
+  <p>const units = [80, 120, 200, 90, 150];</p>
+  <p>const totalBill = units.filter(u => u > 100).map(u => u * 6).reduce((s, b) => s + b, 0);</p>
+  <p>Answer or Error: 2820</p>
+  <p>Why: 100 se upar units ka bill calculate hua.</p>
+</div>
+
+<div>
+  <h1>Example 11: Game Scores – Final Power Score</h1>
+  <p>const scores = [30, 50, 90, 20, 70];</p>
+  <p>const powerScore = scores.filter(s => s > 40).map(s => s * 2).reduce((t, s) => t + s, 0);</p>
+  <p>Answer or Error: 420</p>
+  <p>Why: High scores double karke sum hue.</p>
+</div>
+
+<div>
+  <h1>Example 12: Travel App – Total Fare</h1>
+  <p>const rides = [5, 12, 20, 8, 15];</p>
+  <p>const totalFare = rides.filter(r => r > 10).map(r => r + 50).reduce((s, r) => s + r, 0);</p>
+  <p>Answer or Error: 147</p>
+  <p>Why: Long rides me service fee add hui.</p>
+</div>
+
+<div>
+  <h1>Example 13: Office Work – Productive Hours</h1>
+  <p>const hours = [4, 6, 8, 5, 9];</p>
+  <p>const productiveMinutes = hours.filter(h => h >= 6).map(h => h * 60).reduce((s, m) => s + m, 0);</p>
+  <p>Answer or Error: 1380</p>
+  <p>Why: 6+ hours ko minutes me convert kiya.</p>
+</div>
+
+<div>
+  <h1>Example 14: Shopping Cart – Reward Coins</h1>
+  <p>const purchases = [300, 800, 1200, 400];</p>
+  <p>const coins = purchases.filter(p => p > 500).map(p => 10).reduce((s, c) => s + c, 0);</p>
+  <p>Answer or Error: 20</p>
+  <p>Why: Har eligible purchase par 10 coins mile.</p>
+</div>
+
+<div>
+  <h1>Example 15: Fuel App – Total Fuel Cost</h1>
+  <p>const liters = [3, 6, 10, 4, 8];</p>
+  <p>const totalFuelCost = liters.filter(l => l > 5).map(l => l * 105).reduce((s, c) => s + c, 0);</p>
+  <p>Answer or Error: 2520</p>
+  <p>Why: 5 se zyada liters ka total cost nikla.</p>
+</div>
+
+<div>
+  <h1>Example 16: Interview Classic – Sum of Cubes</h1>
+  <p>const numbers = [1, 2, 3, 4, 5];</p>
+  <p>const sumCubes = numbers.filter(n => n % 2 !== 0).map(n => n ** 3).reduce((s, n) => s + n, 0);</p>
+  <p>Answer or Error: 153</p>
+  <p>Why: Odd numbers ke cubes ka sum.</p>
+</div>
+
+<div>
+  <h1>Example 17: Performance Tracking – Bonus Points</h1>
+  <p>const scores = [10, 20, 30, 40, 50];</p>
+  <p>const avg = scores.reduce((s, n) => s + n, 0) / scores.length;</p>
+  <p>const totalScore = scores.filter(s => s > avg).map(s => s + 5).reduce((t, s) => t + s, 0);</p>
+  <p>Answer or Error: 100</p>
+  <p>Why: Average se upar scores me bonus add hua.</p>
+</div>
+
+<div>
+  <h1>Example 18: Subscription App – Final Bill</h1>
+  <p>const plans = [199, 399, 599, 299];</p>
+  <p>const finalBill = plans.filter(p => p > 300).map(p => p * 1.18).reduce((s, p) => s + p, 0);</p>
+  <p>Answer or Error: 1180.82</p>
+  <p>Why: 300 se upar plans par tax add hua.</p>
+</div>
+
+<div>
+  <h1>Example 19: Learning App – Achievement Score</h1>
+  <p>const scores = [45, 60, 70, 30, 80];</p>
+  <p>const totalScore = scores.filter(s => s >= 60).map(s => s * s).reduce((t, s) => t + s, 0);</p>
+  <p>Answer or Error: 14900</p>
+  <p>Why: Eligible scores ke squares ka sum.</p>
+</div>
+
+<div>
+  <h1>Example 20: Interview Finisher</h1>
+  <p>const numbers = [3, 6, 9, 10, 12];</p>
+  <p>const finalSum = numbers.filter(n => n % 3 === 0).map(n => n * 10).reduce((s, n) => s + n, 0);</p>
+  <p>Answer or Error: 300</p>
+  <p>Why: 3 se divisible numbers ka final sum.</p>
+</div>
+.
