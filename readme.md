@@ -1366,4 +1366,3 @@ ans:'Pen, Book, Pencil'
   <p>Answer or Error: 300</p>
   <p>Why: 3 se divisible numbers ka final sum.</p>
 </div>
-.
