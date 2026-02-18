@@ -57,11 +57,58 @@ console.log(dets.data);
 
 
 // change -- when you chagne elements state
-let sel = document.querySelector(".select");
-let mobile = document.querySelector("i")
+let select = document.querySelector(".sel");
+let device = document.querySelector(".device");
 
-sel.addEventListener("change", (dets)=>{
-    console.log(dets);
-    console.log(dets.target.value);
-    mobile.textContent = dets.target.value;
-})
+select.addEventListener("change", (dets) => {
+  // console.log(dets)
+  console.log(dets.target.value);
+  device.textContent = dets.target.value;
+});
+
+let box1 = document.querySelector(".box");
+let bg_inp = document.querySelector(".bg-inp");
+let border_inp = document.querySelector(".border-inp");
+console.log(box);
+
+// for background
+bg_inp.addEventListener("change", (dets) => {
+  console.log(dets.target.value);
+  box1.style.backgroundColor = dets.target.value;
+});
+// For border
+border_inp.addEventListener("change", (dets) => {
+  // console.log(dets.target.value)
+  box1.style.borderColor = dets.target.value;
+});
+
+// Submit
+
+let form = document.querySelector("form");
+form.addEventListener("submit", () => {
+  document.body.style.backgroundColor = "blue";
+});
+
+// mousemove and mouseout
+let box2 = document.querySelector(".box2")
+
+  box2.addEventListener("mousemove", () => {
+    box2.style.backgroundColor = "grey";
+    box2.style.width = "500px";
+  });
+
+  box2.addEventListener("mouseout", () => {
+    box2.style.backgroundColor = "skyblue";
+    box2.style.width = "100px";
+  });
+
+  //KeyDown
+
+    let text =document.querySelector(".keydown");
+
+    text.addEventListener("keydown", ()=>{
+        text.style.backgroundColor = "darksalmon";
+        text.style.color="red";
+        text.style.width="5rem";
+    })
+

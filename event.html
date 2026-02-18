@@ -11,6 +11,21 @@
             border: 1px solid red;
             background-color: burlywood;
         }
+        .device {
+            text-transform: capitalize;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 3px solid red;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            border: 3px solid red;
+        }
     </style>
 </head>
 <body>
@@ -21,15 +36,30 @@
     <button class="btn2">Color Change</button>
     <br /><br />
 
-        <input type="text">
-        <br><br>
-        <h2>Select Mobile:<i></i></h2>
-    <select>
-        <option >Select Phone :</option>
-        <option value="iphone15">Iphone 15</option>
-        <option value="s25altra">S 22 Altra</option>
-        <option value="nokia">Nokia</option>
+      <input type="text" class="text" />
+    <br /><br />
+    <h2>Selected Device: <i class="device">none</i></h2>
+    <select class="sel">
+        <option>Select your Device</option>
+        <option value="phone">Phone</option>
+        <option value="laptop">Laptop</option>
+        <option value="watch">Watch</option>
+        <option value="Tablet">Tablet</option>
     </select>
+    <br /><br />
+    <div class="box"></div>
+    <br>
+    Change Background Color : <input type="color" class="bg-inp">
+    <br><br>
+    Change Border Color : <input type="color" class="border-inp">
+
+
+    <form action="">
+        <input type="text" class="keydown">
+        <input type="submit" value="Submit">
+    </form>
+    <br><br>
+    <div class="box2"></div>   
     <script src="event.js"></script>
 </body>
 </html>
