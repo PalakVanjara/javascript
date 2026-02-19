@@ -47,7 +47,7 @@ form.addEventListener("submit", (e) => {
                      h6.textContent=inp[4].value ;
              }
               //set default
-                  img.setAttribute("src" ,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRdzwbp61VPxJUTGd0v7N48Ao8UT8wjRACQ3-dHuPOpQ&s");
+                  img.setAttribute("src"," https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1AKF7LelsXtbK8YAYYdiPrDMZdFd74ZTgkQ&s");
                    h3.textContent="username";
                    h4.textContent="user Bio";
                    h5.textContent="user Email";

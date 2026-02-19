@@ -84,17 +84,21 @@ outer.classList.add("outer");
 document.body.append(outer);
 let inner =document.createElement("div");
 inner.classList.add("inner");
-outer.appendChild(inner)
+outer.appendChild(inner);
+console.log(outer);
+console.log(inner);
 
 // append vs appendChild
 // remove vs removeChild
 
 //-------------------------------------------------------------------
-// Style Updates via style and classList (add, remove, toggle)
+//Style Updates via style and classList (add, remove, toggle)
 console.dir(text_h1);
 text_h1.style.backgroundColor = "black";
 text_h1.style.color = "white";
 text_h1.style.padding = "10px";
+console.log(text_h1);
+
 // ClassList - add
 let card = document.querySelector(".card");
 console.dir(card)
