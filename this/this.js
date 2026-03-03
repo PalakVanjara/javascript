@@ -112,7 +112,7 @@ console.log(p1);
 
 //manual binding
 //call,apply,bind
-//function ne cqalla karti vakhte this kweyword ni value set karva mate call,apply,bind method no upypg kariye chhiye
+//function ne call karti vakhte this kweyword ni value set karva mate call,apply,bind method no upypg kariye chhiye
 
 let obj5={
     name:"test10",
@@ -129,7 +129,7 @@ function temp_a(){
 //temp_a.apply(obj5);
 
 //function.bind(object_name)-->this keyword ni value set karva mate bind method no upyog thay che
-let fnc=temp_a.bind(obj5);//nblank object create
+let fnc=temp_a.bind(obj5);//blank object create
 fnc();
 
 //console.log(fnc);
